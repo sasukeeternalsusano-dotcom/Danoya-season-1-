@@ -1,0 +1,421 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style><title>Good Morning Danoya</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Caveat:wght@600&family=Figtree:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky1:#ffe3c9;--sky2:#ffc2d4;--bg:#fff3ea;--card:#fffaf5;--ink:#2d3b2f;--soft:#66705f;--line:#f1cdbb;
+  --green:#2f5d46;--pink:#ff7aa8;--gold:#ffb627;--ember:#e0662a;--chip:#ffe1ea;--chipink:#7a2146;
+  --display:"Fraunces",Georgia,serif;--body:"Figtree","Segoe UI",system-ui,sans-serif;--hand:"Caveat","Segoe Script",cursive;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --sky1:#3a2350;--sky2:#6b2a55;--bg:#1b1226;--card:#2a1c37;--ink:#fff0e4;--soft:#d9bfd0;--line:#563a5f;--green:#9fe0b8;--chip:#4a2646;--chipink:#ffc0d6;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --sky1:#3a2350;--sky2:#6b2a55;--bg:#1b1226;--card:#2a1c37;--ink:#fff0e4;--soft:#d9bfd0;--line:#563a5f;--green:#9fe0b8;--chip:#4a2646;--chipink:#ffc0d6;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0}
+html{overflow-x:hidden}
+body{
+  background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;overflow-x:hidden;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+body::before{content:"";position:fixed;inset:0;z-index:0;background:linear-gradient(180deg,var(--sky1) 0%,var(--sky2) 38%,var(--bg) 78%);pointer-events:none}
+.fl{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.fl svg{position:absolute;bottom:-100px;width:46px;height:80px;opacity:.5;animation:rise 24s linear infinite}
+.fl svg:nth-child(1){left:6%}.fl svg:nth-child(2){left:26%;animation-delay:7s}.fl svg:nth-child(3){left:48%;animation-delay:13s}
+.fl svg:nth-child(4){left:68%;animation-delay:3s}.fl svg:nth-child(5){left:86%;animation-delay:10s}
+@keyframes rise{0%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-60vh) rotate(8deg)}100%{transform:translateY(-125vh) rotate(-6deg)}}
+.wrap{position:relative;z-index:1;max-width:540px;margin:0 auto;padding-block:30px 70px;display:flex;flex-direction:column;gap:22px}
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding-top:8px}
+.sun{position:relative;width:200px;height:130px;overflow:hidden}
+.sun .disc{position:absolute;left:50%;bottom:-100px;width:150px;height:150px;margin-left:-75px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#fff2a8,var(--gold) 55%,var(--ember));box-shadow:0 0 60px 20px #ffb62788;animation:sunrise 3s cubic-bezier(.2,.8,.2,1) .3s forwards}
+.sun .rays{position:absolute;left:50%;bottom:-100px;width:260px;height:260px;margin-left:-130px;border-radius:50%;background:repeating-conic-gradient(from 0deg,#ffb62744 0 6deg,transparent 6deg 18deg);animation:sunrise 3s cubic-bezier(.2,.8,.2,1) .3s forwards,spin 40s linear infinite;mask-image:radial-gradient(circle,#000 35%,transparent 70%);-webkit-mask-image:radial-gradient(circle,#000 35%,transparent 70%)}
+@keyframes sunrise{to{bottom:-10px}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.date{font-size:.82rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin:0}
+h1{font-family:var(--display);font-size:clamp(2.2rem,9vw,3.2rem);line-height:1.05;margin:0;text-wrap:balance}
+.hand{font-family:var(--hand);font-size:2rem;line-height:1.1;color:var(--ember);margin:0}
+.fade{animation:fu 1s ease both}
+.fade.d1{animation-delay:1.2s}.fade.d2{animation-delay:1.6s}.fade.d3{animation-delay:2s}
+@keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 10px 30px #0000000d}
+h2{font-family:var(--display);font-size:1.4rem;line-height:1.2;margin:0}
+.card p{margin:0}
+.muted{color:var(--soft);font-size:.95rem}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:2px solid var(--line);background:var(--chip);color:var(--chipink);border-radius:99px;padding:9px 16px;font:inherit;font-weight:800;font-size:.95rem;cursor:pointer;transition:transform .15s,background .2s}
+.chip:active{transform:scale(.94)}
+.chip[aria-pressed="true"]{background:var(--green);color:var(--card);border-color:var(--green)}
+.btn{border:0;border-radius:99px;background:var(--ember);color:#fff;font:inherit;font-weight:800;padding:12px 22px;cursor:pointer;align-self:flex-start;transition:transform .15s}
+.btn:active{transform:scale(.95)}
+.btn.alt{background:var(--green);color:var(--card)}
+.btn:focus-visible,.chip:focus-visible,.ck:focus-within{outline:3px solid var(--pink);outline-offset:3px}
+.msg{background:var(--chip);color:var(--chipink);border-radius:16px;padding:16px 18px;font-size:1.05rem;min-height:70px;animation:fu .5s both}
+.msg b{display:block;font-family:var(--display);font-size:1.15rem;margin-bottom:4px}
+.ck{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:var(--bg);border:2px solid var(--line);cursor:pointer;transition:background .2s,transform .2s}
+.ck input{width:22px;height:22px;accent-color:var(--green);flex:none}
+.ck:has(input:checked){background:var(--chip);border-color:var(--pink);text-decoration:line-through;color:var(--soft)}
+.bar{height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--gold));border-radius:99px;transition:width .6s cubic-bezier(.2,.9,.3,1.2)}
+.reason{font-family:var(--display);font-style:italic;font-size:1.35rem;line-height:1.3;min-height:3.4em;margin:0;animation:fu .6s both}
+.breath{display:flex;flex-direction:column;align-items:center;gap:14px}
+.orb{width:140px;height:140px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;color:#fff;background:radial-gradient(circle at 35% 30%,#ffd0e0,var(--pink) 60%,var(--ember));box-shadow:0 0 0 0 #ff7aa855;transition:transform 4s ease-in-out;padding:10px;line-height:1.2}
+.orb.in{transform:scale(1.45)}
+.orb.out{transform:scale(1);transition-duration:6s}
+.sig{text-align:center;display:flex;flex-direction:column;gap:6px;padding-top:6px}
+.pc{position:fixed;z-index:40;pointer-events:none;font-size:20px;line-height:1}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.sun .disc,.sun .rays{bottom:-10px}.fl{display:none}.fade{opacity:1}}
+
+.card{opacity:0;transform:translateY(26px) scale(.97);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.9,.3,1.1)}
+.card.in{opacity:1;transform:none}
+.song{background:linear-gradient(135deg,#ff7aa8,#e0662a);color:#fff;border:0;overflow:hidden;position:relative}
+.song h2,.song p,.song .muted{color:#fff}
+.eq{display:flex;gap:5px;align-items:flex-end;height:34px}
+.eq i{width:7px;border-radius:3px;background:#fff;animation:eq 1s ease-in-out infinite}
+.eq i:nth-child(1){animation-delay:-.2s}.eq i:nth-child(2){animation-delay:-.5s}.eq i:nth-child(3){animation-delay:-.8s}.eq i:nth-child(4){animation-delay:-.35s}.eq i:nth-child(5){animation-delay:-.65s}
+@keyframes eq{0%,100%{height:8px}50%{height:34px}}
+.play{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;background:#fff;color:#b3274a;font-weight:800;border-radius:99px;padding:12px 22px;text-decoration:none;transition:transform .15s}
+.play:active{transform:scale(.95)}
+.play:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.song::after{content:"♪";position:absolute;right:16px;top:-8px;font-size:7rem;opacity:.15;line-height:1}
+.hug{--hp:0deg;position:relative;align-self:center;width:150px;height:150px;border:0;border-radius:50%;background:conic-gradient(var(--pink) var(--hp),var(--line) 0);cursor:pointer;display:flex;align-items:center;justify-content:center;font:inherit;padding:0;user-select:none;-webkit-user-select:none;touch-action:none}
+.hug span{width:128px;height:128px;border-radius:50%;background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;gap:2px;line-height:1.2;text-align:center;color:var(--ink)}
+.hug span b{font-size:2.2rem}
+.hug:focus-visible{outline:3px solid var(--pink);outline-offset:5px}
+.hug.done span{background:var(--chip)}
+.free{font-family:var(--display);font-size:1.7rem;margin:0;color:var(--green)}
+input[type=time]{font:inherit;padding:10px 14px;border-radius:12px;border:2px solid var(--line);background:var(--bg);color:var(--ink);align-self:flex-start;min-height:46px}
+.sun{cursor:pointer}
+.hx{position:fixed;bottom:-30px;z-index:0;pointer-events:none;color:var(--pink);opacity:.55}
+.sp{position:fixed;z-index:60;pointer-events:none;font-size:16px;line-height:1;color:var(--pink)}
+@media (prefers-reduced-motion:reduce){.card{opacity:1;transform:none}.eq i{animation:none;height:20px}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="da" viewBox="0 0 60 80"><path d="M30 34V78" stroke="#4f8a5e" stroke-width="3" stroke-linecap="round"/><path d="M30 70C42 66 46 56 44 50c-10 4-14 12-14 20z" fill="#4f8a5e"/><g transform="translate(30 30)"><g fill="#ffd45c" stroke="#e8a317" stroke-width=".8"><path d="M0 0C-8-8-7-19 0-25 7-19 8-8 0 0z"/><path d="M0 0C-8-8-7-19 0-25 7-19 8-8 0 0z" transform="rotate(60)"/><path d="M0 0C-8-8-7-19 0-25 7-19 8-8 0 0z" transform="rotate(120)"/><path d="M0 0C-8-8-7-19 0-25 7-19 8-8 0 0z" transform="rotate(180)"/><path d="M0 0C-8-8-7-19 0-25 7-19 8-8 0 0z" transform="rotate(240)"/><path d="M0 0C-8-8-7-19 0-25 7-19 8-8 0 0z" transform="rotate(300)"/></g><circle r="9" fill="#ff9f1c"/><circle r="5.5" fill="#cc5500"/></g></symbol>
+<symbol id="tu" viewBox="0 0 40 80"><path d="M20 38V78" stroke="#4f8a5e" stroke-width="3" stroke-linecap="round"/><path d="M20 72C8 68 6 56 8 50c8 4 12 12 12 22z" fill="#4f8a5e"/><path d="M8 12c0 18 6 28 12 28s12-10 12-28c-4 6-8 2-12-4-4 6-8 10-12 4z" fill="#ff6f9c"/><path d="M14 14c0 14 3 24 6 26 3-2 6-12 6-26-3 4-5 0-6-6-1 6-3 10-6 6z" fill="#ffa3c1"/></symbol>
+</defs></svg>
+<div class="fl" aria-hidden="true"><svg viewBox="0 0 60 80"><use href="#da"/></svg><svg viewBox="0 0 40 80"><use href="#tu"/></svg><svg viewBox="0 0 60 80"><use href="#da"/></svg><svg viewBox="0 0 40 80"><use href="#tu"/></svg><svg viewBox="0 0 60 80"><use href="#da"/></svg></div>
+
+<main class="wrap">
+  <header class="hero">
+    <div class="sun" aria-hidden="true"><div class="rays"></div><div class="disc"></div></div>
+    <p class="date fade d1" id="date">Today</p>
+    <h1 class="fade d1" id="greet">Good morning, my sun</h1>
+    <p class="hand fade d2">One gentle step at a time.</p>
+    <p class="muted fade d3">I made this for your mornings. You don’t have to do it all. Just open one card.</p>
+  </header>
+
+  <section class="card song" aria-labelledby="h-song">
+    <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <h2 id="h-song">Today’s song for you</h2>
+    <p><b>Vandalize</b> by ONE OK ROCK</p>
+    <p class="muted">Put your headphones in, press play on your way to work, and think of me.</p>
+    <a class="play" href="https://youtu.be/5U1jO4KL60Y?si=jGpwtz6Rwx5bVk9N" target="_blank" rel="noopener">▶ Listen on YouTube</a>
+  </section>
+
+  <section class="card" aria-labelledby="h-mood">
+    <h2 id="h-mood">How are you waking up?</h2>
+    <div class="row" id="moods" role="group" aria-label="Mood"></div>
+    <div class="msg" id="moodmsg" aria-live="polite"><b>Pick one</b>Whatever you pick is allowed. I’ll meet you there.</div>
+  </section>
+
+  <section class="card" aria-labelledby="h-start">
+    <h2 id="h-start">A gentle start</h2>
+    <p class="muted">Tick them off, slowly. Each one counts.</p>
+    <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+    <div id="list" style="display:flex;flex-direction:column;gap:10px"></div>
+    <p class="muted" id="prog" aria-live="polite">0 of 5 done</p>
+  </section>
+
+  <section class="card" aria-labelledby="h-reason">
+    <h2 id="h-reason">A reason I love you today</h2>
+    <p class="reason" id="reason" aria-live="polite"></p>
+    <button class="btn" id="another" type="button">Another one</button>
+  </section>
+
+  <section class="card" aria-labelledby="h-breath">
+    <h2 id="h-breath">One minute to breathe</h2>
+    <p class="muted">Three slow breaths. In for four, out for six.</p>
+    <div class="breath">
+      <div class="orb" id="orb" aria-live="polite">Ready</div>
+      <button class="btn alt" id="bstart" type="button">Start</button>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="h-work">
+    <h2 id="h-work">For your work day</h2>
+    <p>Tiny reminders to carry with you:</p>
+    <div id="work" style="display:flex;flex-direction:column;gap:8px"></div>
+  </section>
+
+  <section class="card" aria-labelledby="h-free">
+    <h2 id="h-free">Almost free</h2>
+    <p class="muted">When does your work day end? I’ll count it down for you.</p>
+    <label for="shift" class="muted">My work day ends at</label>
+    <input type="time" id="shift">
+    <p class="free" id="free" aria-live="polite"></p>
+  </section>
+
+  <section class="card" aria-labelledby="h-hug">
+    <h2 id="h-hug">A pocket hug</h2>
+    <p class="muted">Press and hold until the ring fills. I’m squashing you from far away.</p>
+    <button class="hug" id="hug" type="button" aria-label="Press and hold for a hug"><span><b>🤗</b><i id="hugt" style="font-style:normal">Hold me</i></span></button>
+  </section>
+
+  <section class="card" aria-labelledby="h-send">
+    <h2 id="h-send">Tell me you’re up</h2>
+    <p class="muted">Tap to copy a good morning message, then paste it to me.</p>
+    <div class="msg" id="sendtxt" style="min-height:0"></div>
+    <button class="btn" id="copy" type="button">Copy it</button>
+  </section>
+
+  <footer class="sig">
+    <p class="hand">I’m proud of you. Always.</p>
+    <p class="muted">Now go be brilliant, then come home to me and squash. 🤗</p>
+  </footer>
+</main>
+
+<script>
+(function(){
+var rm=false;try{rm=window.matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){}
+function $(i){return document.getElementById(i)}
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+var now=new Date();
+
+/* greeting */
+var h=now.getHours(),g="Good morning, my sun";
+if(h<5)g="Still early, my sun";else if(h>=12&&h<17)g="Good afternoon, my sun";else if(h>=17&&h<22)g="Good evening, my sun";else if(h>=22)g="Sleep well, my sun";
+$("greet").textContent=g;
+try{$("date").textContent=new Intl.DateTimeFormat("en-GB",{weekday:"long",day:"numeric",month:"long"}).format(now)}catch(e){}
+
+/* confetti */
+function burst(el){
+  if(rm||!document.body.animate)return;
+  var r=el.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,sy=["♥","✦","🌼","✿","☀"];
+  for(var k=0;k<26;k++){
+    var p=document.createElement("div");p.className="pc";p.textContent=sy[k%sy.length];p.style.left=cx+"px";p.style.top=cy+"px";p.style.color=k%2?"#ff7aa8":"#e0662a";
+    document.body.appendChild(p);
+    var a=Math.random()*Math.PI*2,d=70+Math.random()*160;
+    var an=p.animate([{transform:"translate(0,0) scale(.4)",opacity:1},{transform:"translate("+Math.cos(a)*d+"px,"+(Math.sin(a)*d-70)+"px) scale(1.2) rotate("+(Math.random()*360)+"deg)",opacity:1,offset:.6},{transform:"translate("+Math.cos(a)*d+"px,"+(Math.sin(a)*d+150)+"px) scale(.8)",opacity:0}],{duration:1400+Math.random()*700,easing:"cubic-bezier(.2,.8,.3,1)"});
+    an.onfinish=(function(q){return function(){q.remove()}})(p);
+  }
+}
+
+/* moods */
+var MOODS=[
+["Sleepy","So tired",["Five more breaths and then one foot on the floor. That’s the whole job right now.","Tea first, everything else later. You have permission to be slow.","You got through every tired morning so far. This one is not special.","Your body is asking for kindness, not speed. Be soft with it."]],
+["Anxious","Heart racing",["You don’t have to solve the whole day. Only the next ten minutes.","Name three things you can see. Then take one slow breath. You’re here, you’re safe.","Whatever’s waiting for you, you’ve handled harder. I’ve watched you.","Worry makes everything look bigger than it is. Shrink the day down to one thing."]],
+["Overwhelmed","Too much",["Pick one task, only one. Do it badly if you must. Done beats perfect.","You’re allowed to take it in small pieces. Nobody is timing you but you.","Put the list down for a minute. Breathe. The list will still be there, and so will I.","You don’t have to be everything today. Just be present, and that’s enough."]],
+["Grumpy","Not today",["Grumpy Danoya is allowed. Be as grumpy as you like, I’ll take every bit of it.","You’re allowed to roll your eyes at Monday and still be amazing at it.","Put on a song that makes you feel dangerous, and walk like it.","Be a little mean to the alarm clock. It deserves it."]],
+["Okay","Doing alright",["Look at you, doing fine. Keep that energy, and remember it was always yours.","A calm morning is a gift. Wear it well today.","You’re steady, and I’m proud of that.","Let’s make today a good one. You and me, on opposite sides of the world, same sun."]]
+];
+var mb=$("moods"),mm=$("moodmsg"),ms=null;
+MOODS.forEach(function(m,i){
+  var b=document.createElement("button");b.type="button";b.className="chip";b.textContent=m[0];b.setAttribute("aria-pressed","false");
+  b.addEventListener("click",function(){
+    [].forEach.call(mb.children,function(c){c.setAttribute("aria-pressed","false")});b.setAttribute("aria-pressed","true");
+    var arr=m[2],pick=arr[Math.floor(Math.random()*arr.length)];
+    mm.innerHTML="";var t=document.createElement("b");t.textContent=m[1];mm.appendChild(t);mm.appendChild(document.createTextNode(pick));
+    mm.style.animation="none";void mm.offsetWidth;mm.style.animation="";
+  });
+  mb.appendChild(b);
+});
+
+/* checklist, per day */
+var dayKey="gm-"+now.getFullYear()+"-"+now.getMonth()+"-"+now.getDate();
+var STEPS=["Drink a glass of water","Stretch for one minute","Make your tea or coffee","Put on a song you love","Pick the outfit that makes you feel good"];
+var saved={};try{saved=JSON.parse(store(dayKey)||"{}")}catch(e){}
+var list=$("list"),bar=$("bar"),prog=$("prog"),inputs=[];
+function upd(first){
+  var n=inputs.filter(function(i){return i.checked}).length;
+  bar.style.width=(n/STEPS.length*100)+"%";
+  prog.textContent=n+" of "+STEPS.length+" done"+(n===STEPS.length?". You did the hard part. ☀":"");
+  if(n===STEPS.length&&!first)burst(prog);
+}
+STEPS.forEach(function(s,i){
+  var l=document.createElement("label");l.className="ck";
+  var c=document.createElement("input");c.type="checkbox";c.checked=!!saved[i];
+  var t=document.createElement("span");t.textContent=s;
+  c.addEventListener("change",function(){saved[i]=c.checked;store(dayKey,JSON.stringify(saved));upd(false)});
+  l.appendChild(c);l.appendChild(t);list.appendChild(l);inputs.push(c);
+});
+upd(true);
+
+/* reasons */
+var R=[
+"Your laugh is a killer, and I mean that in the best way.",
+"You make everything feel easy, even Mondays when you’re not around.",
+"You’re kind in a way that never needs an audience.",
+"You’re artistic and expressive, and everything you make has you in it.",
+"Talking to you is the part of my day I look forward to most.",
+"You make ordinary days feel lighter just by being in them.",
+"You’re brave in ways you don’t give yourself credit for.",
+"Your voice notes are my favourite sound.",
+"You tell stories in a way that makes me laugh and lean in.",
+"You notice small things about people, and it matters.",
+"You work hard, and you still find time to care about me.",
+"The way you love One Piece, completely and without shame.",
+"You’re the reason I check my phone with a smile.",
+"You’re stronger than the mornings that try to beat you.",
+"You’re allowed to be soft and strong at the same time.",
+"You turned long distance into something I look forward to.",
+"You make me want to be a better version of myself.",
+"You’re beautiful inside and out, and I’m lucky I get to say so.",
+"You’re my favourite person across all of time and space.",
+"You have great taste in music, and you explain it like it matters, because it does.",
+"You trust me with the real you, and I treasure that.",
+"You’re the calm in my chaos, even from another country.",
+"You’re funny in a way that sneaks up on me.",
+"You’re my sun, and I mean it every morning.",
+"You’re going to be great at today, because you’re great at everything that matters.",
+"I love every version of you: the sleepy one, the grumpy one and the shining one.",
+"You make me feel safe to be myself.",
+"One day, soon, I’ll hold you properly. Until then, I’m with you in every way I can be.",
+"You asked me to ask you, because you couldn’t wait. That’s one of my favourite things you’ve ever done.",
+"You’re creative in a way that makes the world look better.",
+"Your smile changes the whole room, even through a screen.",
+"You care about people so much it shows in everything you do.",
+"You make me laugh when I didn’t know I needed to.",
+"You stay up late with me and somehow never make it feel like a sacrifice.",
+"You’re a Soul Queen, and I say that with total respect.",
+"You’re the butterfly I never want to stop watching.",
+"You make me feel like the luckiest guy alive.",
+"You see the beauty in small things, like nature, music and stories.",
+"You get excited about what you love, and it’s contagious.",
+"You’re patient with me, and I don’t say thank you enough.",
+"You’re clever and curious and you ask the best questions.",
+"You make hard days softer just by being on the other end of the call.",
+"You have a heart that’s big enough for everyone and still I feel chosen.",
+"You’re the best part of every plan I make for the future.",
+"You make me want to take you on long walks and talk about everything.",
+"You’re cute at all times, and honestly it should be illegal.",
+"You’re stubborn in a charming way, and I love arguing about what to watch with you.",
+"You’re the first thing I think about in the morning.",
+"You make waiting for you worth it.",
+"You’re a whole universe, and I’m happy to keep exploring it.",
+"You didn’t just become my girlfriend, you became my favourite home.",
+"You give the best reactions, and I could watch them forever.",
+"You’re proof that good things come when you least expect them.",
+"You’re hard-working, and I’m so proud of you.",
+"You deserve rest, joy and every good thing, and I want to be part of it.",
+"Even your grumpy mornings are lovable to me.",
+"You make me feel understood without having to explain myself.",
+"You’re my favourite notification, every single time.",
+"You’re the person I want to tell everything to first.",
+"I love you exactly as you are, today and every day."];
+var di=Math.floor((now-new Date(now.getFullYear(),0,0))/864e5)%R.length,rs=$("reason");
+function show(i){rs.textContent=R[i];rs.style.animation="none";void rs.offsetWidth;rs.style.animation=""}
+show(di);
+$("another").addEventListener("click",function(){var n;do{n=Math.floor(Math.random()*R.length)}while(n===di);di=n;show(di)});
+
+/* breathing */
+var orb=$("orb"),bs=$("bstart"),running=false,timers=[];
+function clr(){timers.forEach(clearTimeout);timers=[]}
+function later(f,ms){timers.push(setTimeout(f,ms))}
+function cycle(n){
+  if(n===0){orb.className="orb";orb.textContent="Done. Well done.";bs.textContent="Again";bs.disabled=false;running=false;burst(orb);return}
+  orb.textContent="Breathe in…";orb.className="orb in";
+  later(function(){orb.textContent="Hold";},4000);
+  later(function(){orb.textContent="Breathe out…";orb.className="orb out"},5000);
+  later(function(){cycle(n-1)},11000);
+}
+bs.addEventListener("click",function(){
+  if(running)return;running=true;bs.disabled=true;clr();
+  if(rm){orb.textContent="Breathe in for 4, out for 6";later(function(){orb.textContent="Done. Well done.";bs.disabled=false;running=false},4000);return}
+  cycle(3);
+});
+
+/* work reminders */
+var W=[["You only need to be good enough today.","Not perfect. Good enough is real."],["Take your lunch break.","Away from your desk if you can."],["Drink some water.","Your future self will thank you."],["Message me when you need a boost.","Even one emoji works."]];
+var wk=$("work");
+W.forEach(function(w){var d=document.createElement("div");d.className="msg";d.style.minHeight="0";d.style.animation="none";var b=document.createElement("b");b.textContent=w[0];d.appendChild(b);d.appendChild(document.createTextNode(w[1]));wk.appendChild(d)});
+
+/* send good morning */
+var text="Good morning, Doodi ☀️ I’m up. Today I’m feeling: "+"…";
+var st=$("sendtxt");
+function mk(){
+  var m=mb.querySelector('[aria-pressed="true"]');
+  text="Good morning, Doodi ☀️ I’m up."+(m?" I’m feeling "+m.textContent.toLowerCase()+" today.":"")+" Miss you.";
+  st.textContent=text;
+}
+mk();
+mb.addEventListener("click",mk);
+$("copy").addEventListener("click",function(){
+  var b=$("copy");
+  function ok(){b.textContent="Copied. Paste it to me ♡"}
+  function bad(){b.textContent="Select the text above and copy it";try{var r=document.createRange();r.selectNodeContents(st);var s=window.getSelection();s.removeAllRanges();s.addRange(r)}catch(e){}}
+  try{navigator.clipboard.writeText(text).then(ok,bad)}catch(e){bad()}
+});
+
+/* round 2: reveal, sun tap, hearts, hug, shift */
+var cards=[].slice.call(document.querySelectorAll(".card"));
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});cards.forEach(function(c){io.observe(c)})}else{cards.forEach(function(c){c.classList.add("in")})}
+function sparks(x,y,n){
+  if(rm||!document.body.animate)return;
+  var sy=["♥","✦","✿","☀"];
+  for(var k=0;k<n;k++){
+    var p=document.createElement("div");p.className="sp";p.textContent=sy[Math.floor(Math.random()*sy.length)];p.style.left=x+"px";p.style.top=y+"px";p.style.fontSize=(12+Math.random()*12)+"px";
+    document.body.appendChild(p);var a=Math.random()*Math.PI*2,d=28+Math.random()*70;
+    var an=p.animate([{transform:"translate(-50%,-50%) scale(.4)",opacity:1},{transform:"translate(calc(-50% + "+Math.cos(a)*d+"px),calc(-50% + "+(Math.sin(a)*d-24)+"px)) scale(1.1)",opacity:0}],{duration:900+Math.random()*400,easing:"cubic-bezier(.2,.8,.3,1)"});
+    an.onfinish=(function(q){return function(){q.remove()}})(p);
+  }
+}
+window.addEventListener("pointerdown",function(e){sparks(e.clientX,e.clientY,6)},{passive:true});
+var sunEl=document.querySelector(".sun"),sunMsgs=["Good morning!","You’ve got this.","Rise and shine, my sun.","Smile, I can feel it.","Today is yours."],si=0;
+sunEl.addEventListener("click",function(){var g=$("greet");burst(sunEl);g.textContent=sunMsgs[si++%sunMsgs.length]});
+if(!rm){setInterval(function(){
+  if(document.hidden)return;
+  var h=document.createElement("div");h.className="hx";h.textContent="♥";h.style.left=(Math.random()*96)+"vw";h.style.fontSize=(10+Math.random()*16)+"px";
+  document.body.appendChild(h);
+  if(h.animate){var an=h.animate([{transform:"translateY(0)",opacity:0},{opacity:.6,offset:.15},{transform:"translateY(-"+(window.innerHeight+60)+"px) translateX("+((Math.random()*80)-40)+"px)",opacity:0}],{duration:7000+Math.random()*4000,easing:"ease-in"});an.onfinish=function(){h.remove()}}else{h.remove()}
+},1400)}
+/* hug */
+var hug=$("hug"),ht=$("hugt"),hp=0,hid=null,done=false;
+function hset(){hug.style.setProperty("--hp",(hp*3.6)+"deg")}
+function hstart(e){if(done)return;if(e&&e.preventDefault&&e.type!=="keydown")e.preventDefault();if(hid)return;ht.textContent="Squashing…";
+  hid=setInterval(function(){hp+=2.5;hset();if(hp>=100){clearInterval(hid);hid=null;done=true;hug.classList.add("done");ht.textContent="Squashed!";burst(hug);try{navigator.vibrate&&navigator.vibrate([80,60,160])}catch(e){}
+    setTimeout(function(){done=false;hp=0;hset();hug.classList.remove("done");ht.textContent="Again?"},4000)}},50)}
+function hstop(){if(done||!hid)return;clearInterval(hid);hid=null;hp=0;hset();ht.textContent="Hold me"}
+hug.addEventListener("pointerdown",hstart);
+["pointerup","pointerleave","pointercancel"].forEach(function(n){hug.addEventListener(n,hstop)});
+hug.addEventListener("keydown",function(e){if((e.key===" "||e.key==="Enter")&&!e.repeat){e.preventDefault();hstart(e)}});
+hug.addEventListener("keyup",function(e){if(e.key===" "||e.key==="Enter")hstop()});
+/* shift countdown */
+var sh=$("shift"),fr=$("free"),sv=store("gm-shift")||"";
+sh.value=sv;
+function ft(){
+  fr.textContent="";if(!sh.value)return;
+  var p=sh.value.split(":"),t=new Date();t.setHours(+p[0],+p[1],0,0);
+  var ms=t-new Date();
+  if(ms<=0){fr.textContent="You’re free! Go rest, my sun. ☀";return}
+  var m=Math.round(ms/60000),hh=Math.floor(m/60),mm2=m%60;
+  fr.textContent=(hh?hh+"h ":"")+mm2+"m until you’re free";
+}
+sh.addEventListener("input",function(){store("gm-shift",sh.value);ft()});
+ft();setInterval(ft,20000);
+})();
+</script>
+<a href="#" onclick="try{parent.postMessage('s1close','*')}catch(e){};return false" style="position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:max(12px,env(safe-area-inset-bottom,0px));z-index:99999;background:rgba(20,10,20,.78);color:#fff;font:700 13px system-ui,sans-serif;padding:9px 15px;border-radius:99px;text-decoration:none">← Season 1</a><script>
+(function(){var D={"k": "ep13-morning.html", "t": "Good Morning Danoya", "x": "Today’s extra reason: you got up and showed up, even when it was hard. That’s brave, and I’m proud of you."},K="s1-bonus";
+function g(){try{return JSON.parse(localStorage.getItem(K)||"{}")}catch(e){return{}}}
+function sv(o){try{localStorage.setItem(K,JSON.stringify(o))}catch(e){}}
+var got=!!g()[D.k],S="font:700 13px system-ui,sans-serif;";
+var b=document.createElement("button");b.type="button";b.setAttribute("aria-label","New bonus for this episode");
+b.style.cssText="position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:max(12px,env(safe-area-inset-bottom,0px));z-index:99998;background:linear-gradient(135deg,#e0407b,#f0a020);color:#fff;border:0;border-radius:99px;padding:9px 15px;cursor:pointer;"+S;
+function lab(){b.textContent=got?"✨ Bonus ✓":"✨ New"}lab();
+b.onclick=function(){
+  var o=document.createElement("div");o.style.cssText="position:fixed;inset:0;z-index:100000;background:rgba(15,5,15,.72);display:flex;align-items:center;justify-content:center;padding:20px;font-family:system-ui,sans-serif";
+  var c=document.createElement("div");c.setAttribute("role","dialog");c.setAttribute("aria-label","Replay bonus");c.style.cssText="max-width:420px;width:100%;background:#fff6f0;color:#43102c;border:3px solid #e0407b;border-radius:22px;padding:24px;text-align:center;box-shadow:0 20px 60px #0008";
+  var k=document.createElement("div");k.textContent="✨ NEW FOR THE REPLAY";k.style.cssText="font-weight:800;letter-spacing:.2em;font-size:.72rem;color:#e0407b";
+  var t=document.createElement("div");t.textContent=D.t;t.style.cssText="font-weight:800;font-size:1.1rem;margin:6px 0 10px";
+  var p=document.createElement("p");p.textContent=D.x;p.style.cssText="margin:0 0 16px;font-size:1.05rem;line-height:1.5";
+  var bt=document.createElement("button");bt.type="button";bt.textContent=got?"Close":"Collect ✨";bt.style.cssText="background:#e0407b;color:#fff;border:0;border-radius:99px;padding:11px 24px;cursor:pointer;"+S;
+  bt.onclick=function(){if(!got){var s=g();s[D.k]=1;sv(s);got=true;lab()}o.remove()};
+  o.onclick=function(e){if(e.target===o)o.remove()};
+  c.appendChild(k);c.appendChild(t);c.appendChild(p);c.appendChild(bt);o.appendChild(c);document.body.appendChild(o);bt.focus();
+};
+(document.body||document.documentElement).appendChild(b);
+})();
+</script></html>

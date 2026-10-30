@@ -1,0 +1,226 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>The Danoya Collection</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a one-room gallery. Museum wall placards for each "work", then the defense's rebuttal, then a hand-written closing note. */
+:root{
+  --wall:#f6ece6; --card:#fffaf6; --ink:#2a1420; --muted:#7a5a66;
+  --accent:#b8325a; --accent-soft:#f3d3dc; --rule:#e4cfd3;
+  --display:"Young Serif",Georgia,serif;
+  --body:"Instrument Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --wall:#1d0f17; --card:#2a1621; --ink:#f7e6ec; --muted:#c29aa9;
+  --accent:#ff6f96; --accent-soft:#4a1f30; --rule:#43263a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --wall:#1d0f17; --card:#2a1621; --ink:#f7e6ec; --muted:#c29aa9;
+  --accent:#ff6f96; --accent-soft:#4a1f30; --rule:#43263a; color-scheme:dark}
+
+body{background:var(--wall);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:680px;margin:0 auto;padding-block:48px 72px;display:flex;flex-direction:column;gap:56px}
+h1,h2{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.1}
+h1{font-size:clamp(2.4rem,9vw,3.8rem)}
+h2{font-size:clamp(1.6rem,6vw,2.2rem)}
+p{margin:0}
+.label{font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.hero{display:flex;flex-direction:column;gap:16px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:1.15rem;color:var(--muted);max-width:52ch}
+
+.works{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.placard{background:var(--card);border:1px solid var(--rule);padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.placard h3{font-family:var(--display);font-weight:400;font-size:1.35rem;margin:0}
+.meta{font-family:var(--mono);font-size:.78rem;color:var(--muted);line-height:1.5}
+.placard p:last-child{font-size:.98rem}
+.no{font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:.1em}
+
+.case{display:flex;flex-direction:column;gap:20px}
+.objection{font-family:var(--display);font-size:1.3rem;border-left:3px solid var(--accent);padding-left:16px;color:var(--muted)}
+.rebuttals{display:flex;flex-direction:column;gap:18px;margin:0;padding:0;list-style:none}
+.rebuttals li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline}
+.rebuttals .n{font-family:var(--mono);color:var(--accent);font-size:.85rem}
+.rebuttals strong{display:block;font-weight:600}
+
+.meter{background:var(--accent-soft);padding:24px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.count{font-family:var(--display);font-size:3.2rem;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
+button{font:600 1rem var(--body);background:var(--accent);color:var(--card);border:0;padding:12px 20px;cursor:pointer;border-radius:999px;transition:transform .15s}
+button:hover{transform:translateY(-2px)}
+button:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+#quip{min-height:1.6em;color:var(--ink);font-style:italic}
+
+.breaking{border:2px solid var(--accent);background:var(--card);padding:26px;display:flex;flex-direction:column;gap:14px;position:relative}
+.breaking .stamp{align-self:flex-start;font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;background:var(--accent);color:var(--card);padding:6px 10px;transform:rotate(-2deg)}
+.breaking h2{color:var(--accent)}
+.breaking{padding:clamp(24px,5vw,40px);gap:18px;font-size:1.08rem}
+.breaking h2.big{font-size:clamp(2.6rem,11vw,4.4rem);line-height:1}
+.wow{font-family:var(--display);font-size:clamp(3.5rem,18vw,7rem);line-height:.9;color:var(--accent);letter-spacing:-.02em}
+.log{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--rule);padding-top:16px}
+.log ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.log li{display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:baseline}
+.log li span{font-family:var(--mono);font-size:.8rem;color:var(--accent);font-variant-numeric:tabular-nums}
+.tiers{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.tier{display:grid;grid-template-columns:76px 1fr;gap:6px;min-width:0}
+.tier .t{font-family:var(--display);font-size:1.15rem;display:flex;align-items:center;justify-content:center;background:var(--accent-soft);color:var(--accent);padding:10px 4px}
+.tier .items{display:flex;flex-wrap:wrap;gap:6px;background:var(--wall);padding:8px;min-width:0}
+.chip{font-size:.85rem;background:var(--card);border:1px solid var(--rule);padding:6px 10px}
+.tier.top .t{background:var(--accent);color:var(--card)}
+.tier.top .chip{border-color:var(--accent);font-weight:600}
+.tier.broken .t{font-size:.8rem;font-family:var(--mono)}
+.tier.broken .items{font-family:var(--mono);font-size:.8rem;color:var(--muted);align-items:center}
+.note{display:flex;flex-direction:column;gap:14px;font-size:1.08rem}
+.note p.sign{font-family:var(--display);font-size:1.4rem;color:var(--accent)}
+@media (prefers-reduced-motion:reduce){button{transition:none}button:hover{transform:none}}
+</style>
+
+<main>
+  <header class="hero">
+    <span class="label">Permanent exhibition · Open whenever she walks past</span>
+    <h1>The Danoya Collection: <em>works in pants</em></h1>
+    <p class="lede">Danoya, you keep telling me it doesn't count when you're dressed. The curator disagrees. Please tour the gallery before filing any further objections.</p>
+  </header>
+
+  <section class="breaking" aria-label="Massive discovery">
+    <span class="stamp">Massive discovery · Gallery closed for emergency renovations</span>
+    <h2 class="big">Grey Sweatpants</h2>
+    <p class="meta">Condition: changed my life<br>Ranking: the GOAT tier was not enough. A tier above the tier had to be built.</p>
+    <p class="wow">I SAW THEM.</p>
+    <p>Danoya, I thought the leggings were the peak. I put a new tier in the gallery. I felt proud of the gallery. Then the grey sweatpants happened.</p>
+    <p>Soft grey, loose, completely effortless, and sitting on you in a way that should be studied. You weren't dressed up. You weren't posing. You were just you, in the comfiest pants in the world, and my brain left the building and has not come back.</p>
+    <p>I need the record to show that no outfit has ever done this to me before. They are simple. They are grey. And I have never been so weak for a pair of sweatpants in my life.</p>
+    <div class="log" aria-label="Curator's second reaction log">
+      <span class="label">Curator's second reaction log</span>
+      <ol>
+        <li><span>0:00</span>Saw the sweatpants.</li>
+        <li><span>0:01</span>Brain left the chat.</li>
+        <li><span>0:03</span>Whispered "no way" to nobody.</li>
+        <li><span>0:10</span>Zoomed in. Zoomed out. Zoomed in again.</li>
+        <li><span>1:00</span>Called emergency meeting number two.</li>
+        <li><span>Now</span>Still recovering. Do not expect me to be normal today.</li>
+      </ol>
+    </div>
+    <div class="tiers" aria-label="Updated tier list">
+      <div class="tier top"><span class="t">GOD</span><div class="items"><span class="chip">Grey Sweatpants</span></div></div>
+      <div class="tier"><span class="t">GOAT</span><div class="items"><span class="chip">Black Sporty Leggings</span></div></div>
+      <div class="tier"><span class="t">S</span><div class="items"><span class="chip">Office Pants</span><span class="chip">Pajama Pants</span><span class="chip">Black Pants, Uni</span><span class="chip">Jeans, Uni</span></div></div>
+    </div>
+  </section>
+
+  <section class="breaking" aria-label="New acquisition">
+    <span class="stamp">Breaking · Tier list destroyed</span>
+    <h2 class="big">Black Sporty Leggings</h2>
+    <p class="meta">Condition: changed the curator's life<br>Ranking: off the chart. A new tier had to be invented.</p>
+    <p class="wow">WOW.</p>
+    <p>The curator was perfectly happy with the collection. Then this arrived and the whole game changed. Every other piece in this gallery is still incredible, but they now live in a world where these leggings exist, and nothing has been the same since.</p>
+    <p>Danoya, I need you to understand what happened when I opened that picture. I stopped. I zoomed in. I zoomed out to take in the full picture, then zoomed back in again. I closed it, opened it again just to make sure it was real. It was real.</p>
+    <p>You were just standing in your room in a t-shirt, taking a quick picture like it was nothing, and you have no idea what you did to me. That curve. The way the tee sits right above it like it knows exactly what it's doing. The leggings that look like they were made for you and nobody else.</p>
+    <p>And you're telling me it's "not the same"? You're fully dressed in this picture, and it's the hottest thing I've ever seen.</p>
+    <div class="log" aria-label="Curator's reaction log">
+      <span class="label">Curator's reaction log</span>
+      <ol>
+        <li><span>0:00</span>Opened the picture.</li>
+        <li><span>0:02</span>Forgot how to breathe.</li>
+        <li><span>0:03</span>Weeny got HARD HARD.</li>
+        <li><span>0:05</span>Said "WOW" out loud to an empty room.</li>
+        <li><span>0:30</span>Still staring.</li>
+        <li><span>2:00</span>Called an emergency meeting to rebuild the tier list.</li>
+        <li><span>Now</span>Still not over it. Probably never will be.</li>
+      </ol>
+    </div>
+    <div class="tiers" aria-label="Official tier list">
+      <div class="tier top"><span class="t">GOAT</span><div class="items"><span class="chip">Black Sporty Leggings</span></div></div>
+      <div class="tier"><span class="t">S</span><div class="items"><span class="chip">Office Pants</span><span class="chip">Pajama Pants</span><span class="chip">Black Pants, Uni</span><span class="chip">Jeans, Uni</span></div></div>
+      <div class="tier broken"><span class="t">A–F</span><div class="items">empty. Danoya doesn't have pants that go here.</div></div>
+    </div>
+  </section>
+
+  <section class="works" aria-label="Works on display">
+    <article class="placard">
+      <span class="no">No. 01</span>
+      <h3>Office Pants, 9 to 5</h3>
+      <p class="meta">Medium: tailoring, restraint<br>Condition: should come with a warning</p>
+      <p>Proof that "professional" and "unfairly hot" can share the same pair of pants. How anyone gets work done around this is a mystery to the curator.</p>
+    </article>
+    <article class="placard">
+      <span class="no">No. 02</span>
+      <h3>Pajama Pants, After Hours</h3>
+      <p class="meta">Medium: soft cotton, zero effort<br>Condition: somehow the most dangerous</p>
+      <p>She thinks this is her least sexy outfit. This is the piece that hurts the curator most, because she isn't even trying.</p>
+    </article>
+    <article class="placard">
+      <span class="no">No. 03</span>
+      <h3>Black Pants, Uni Years</h3>
+      <p class="meta">Medium: black fabric, pure confidence<br>Condition: unforgettable</p>
+      <p>An early work that left a permanent mark. The curator still remembers trying to look normal in the hallway while she walked past.</p>
+    </article>
+    <article class="placard">
+      <span class="no">No. 04</span>
+      <h3>Jeans, Uni Years</h3>
+      <p class="meta">Medium: denim, no mercy<br>Condition: devastating</p>
+      <p>The curator has lost entire lectures to this piece. Most frequently viewed while she walked ahead of him, which was rude, honestly.</p>
+    </article>
+  </section>
+
+  <section class="case">
+    <span class="label">Her objection, entered into the record</span>
+    <p class="objection">"It's not the same as seeing your dick straight up."</p>
+    <h2>The defense responds</h2>
+    <ul class="rebuttals">
+      <li><span class="n">i.</span><div><strong>Covered is its own thing.</strong> Pants leave room for imagination, and trust me, mine has been very busy.</div></li>
+      <li><span class="n">ii.</span><div><strong>It's not a body part, it's you.</strong> It's the way you move, the way you stand when you're thinking, the walk you don't know you have.</div></li>
+      <li><span class="n">iii.</span><div><strong>I've never needed more.</strong> I've never even seen you without them, and I'm already this obsessed. That should tell you everything.</div></li>
+      <li><span class="n">iv.</span><div><strong>Evidence of impact.</strong> See the counter below. The numbers do not lie.</div></li>
+    </ul>
+  </section>
+
+  <section class="meter" aria-live="polite">
+    <span class="label">Exhibit A · Times I got distracted by it</span>
+    <span class="count" id="count">999</span>
+    <p id="quip">Tap every time it happens. Be honest.</p>
+    <button type="button" id="tap">It happened again</button>
+  </section>
+
+  <section class="note">
+    <span class="label">From the curator</span>
+    <h2>So, for the record</h2>
+    <p>You don't have to take your clothes off for me to want you. You walk past me in a pair of pants and I'm done. That's not me being nice, that's just what happens to me around you.</p>
+    <p>I wish you could see yourself the way I see you, just for one afternoon. Until then, this gallery stays open.</p>
+    <p class="sign">— yours, permanently distracted</p>
+  </section>
+</main>
+
+<script>
+const quips=["Again? Already?","Noted. Filed. Thought about.","The defense rests its case.","At this point I need a doctor.","Statistically, you should just believe me now.","Curator has left the building (to follow you)."];
+const el=document.getElementById('count'),q=document.getElementById('quip');
+let n=999; try{n=parseInt(localStorage.getItem('danyaCount999')||'999',10)||999}catch(e){}
+el.textContent=n;
+document.getElementById('tap').addEventListener('click',()=>{
+  n++; el.textContent=n; q.textContent=quips[(n-1)%quips.length];
+  try{localStorage.setItem('danyaCount999',n)}catch(e){}
+});
+</script>
+
+<a href="#" onclick="try{parent.postMessage('s1close','*')}catch(e){};return false" style="position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:max(12px,env(safe-area-inset-bottom,0px));z-index:99999;background:rgba(20,10,20,.78);color:#fff;font:700 13px system-ui,sans-serif;padding:9px 15px;border-radius:99px;text-decoration:none">← Season 1</a><script>
+(function(){var D={"k": "ep22-collection.html", "t": "The Danoya Collection", "x": "Curator’s update: the gallery is now open 24/7. The curator has cancelled all other plans."},K="s1-bonus";
+function g(){try{return JSON.parse(localStorage.getItem(K)||"{}")}catch(e){return{}}}
+function sv(o){try{localStorage.setItem(K,JSON.stringify(o))}catch(e){}}
+var got=!!g()[D.k],S="font:700 13px system-ui,sans-serif;";
+var b=document.createElement("button");b.type="button";b.setAttribute("aria-label","New bonus for this episode");
+b.style.cssText="position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:max(12px,env(safe-area-inset-bottom,0px));z-index:99998;background:linear-gradient(135deg,#e0407b,#f0a020);color:#fff;border:0;border-radius:99px;padding:9px 15px;cursor:pointer;"+S;
+function lab(){b.textContent=got?"✨ Bonus ✓":"✨ New"}lab();
+b.onclick=function(){
+  var o=document.createElement("div");o.style.cssText="position:fixed;inset:0;z-index:100000;background:rgba(15,5,15,.72);display:flex;align-items:center;justify-content:center;padding:20px;font-family:system-ui,sans-serif";
+  var c=document.createElement("div");c.setAttribute("role","dialog");c.setAttribute("aria-label","Replay bonus");c.style.cssText="max-width:420px;width:100%;background:#fff6f0;color:#43102c;border:3px solid #e0407b;border-radius:22px;padding:24px;text-align:center;box-shadow:0 20px 60px #0008";
+  var k=document.createElement("div");k.textContent="✨ NEW FOR THE REPLAY";k.style.cssText="font-weight:800;letter-spacing:.2em;font-size:.72rem;color:#e0407b";
+  var t=document.createElement("div");t.textContent=D.t;t.style.cssText="font-weight:800;font-size:1.1rem;margin:6px 0 10px";
+  var p=document.createElement("p");p.textContent=D.x;p.style.cssText="margin:0 0 16px;font-size:1.05rem;line-height:1.5";
+  var bt=document.createElement("button");bt.type="button";bt.textContent=got?"Close":"Collect ✨";bt.style.cssText="background:#e0407b;color:#fff;border:0;border-radius:99px;padding:11px 24px;cursor:pointer;"+S;
+  bt.onclick=function(){if(!got){var s=g();s[D.k]=1;sv(s);got=true;lab()}o.remove()};
+  o.onclick=function(e){if(e.target===o)o.remove()};
+  c.appendChild(k);c.appendChild(t);c.appendChild(p);c.appendChild(bt);o.appendChild(c);document.body.appendChild(o);bt.focus();
+};
+(document.body||document.documentElement).appendChild(b);
+})();
+</script></body></html>
